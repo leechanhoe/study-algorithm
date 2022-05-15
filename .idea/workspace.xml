@@ -5,12 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7a047fd1-3834-4cac-ac18-9b603b31a7d8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/backjoon/bronze/a10809.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backjoon/bronze/a11654.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backjoon/bronze/a11720.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backjoon/bronze/a2675.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backjoon/silver/a1065.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backjoon/silver/a4673.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/backjoon/bronze/a1157.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/backjoon/bronze/a1712.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/backjoon/bronze/a2292.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/backjoon/bronze/a2908.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/backjoon/bronze/a5622.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/backjoon/silver/a1316.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/backjoon/silver/a2941.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -43,20 +45,21 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "last_opened_file_path": "C:/Users/82102/Desktop/programing/study-algorithm",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+    "settings.editor.selected.configurable": "preferences.general"
   }
 }]]></component>
   <component name="RunManager">
-    <configuration name="a2675" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="backjoon.bronze.a2675" />
+    <configuration name="a2292" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="backjoon.bronze.a2292" />
       <module name="study-algorithm" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="backjoon.bronze.*" />
+          <option name="PATTERN" value="backjoon.silver.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -66,7 +69,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.a2675" />
+        <item itemvalue="Application.a2292" />
       </list>
     </recent_temporary>
   </component>
