@@ -5,126 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7a047fd1-3834-4cac-ac18-9b603b31a7d8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/backjoon/bronze/bronze1/a1110.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backjoon/bronze/bronze1/a1157.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backjoon/bronze/bronze1/a1193.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backjoon/bronze/bronze1/a1546.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backjoon/bronze/bronze1/a2775.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backjoon/bronze/bronze1/a2839.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backjoon/bronze/bronze1/a2869.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backjoon/bronze/bronze1/a4344.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backjoon/bronze/bronze2/a10809.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backjoon/bronze/bronze2/a1152.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backjoon/bronze/bronze2/a11720.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backjoon/bronze/bronze2/a15552.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backjoon/bronze/bronze2/a15596.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backjoon/bronze/bronze2/a2292.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backjoon/bronze/bronze2/a2562.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backjoon/bronze/bronze2/a2577.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backjoon/bronze/bronze2/a2675.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backjoon/bronze/bronze2/a2908.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backjoon/bronze/bronze2/a3052.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backjoon/bronze/bronze2/a5622.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backjoon/bronze/bronze2/a8958.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backjoon/bronze/bronze3/a10250.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backjoon/bronze/bronze3/a10818.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backjoon/bronze/bronze3/a10871.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backjoon/bronze/bronze3/a10950.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backjoon/bronze/bronze3/a10951.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backjoon/bronze/bronze3/a10952.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backjoon/bronze/bronze3/a11021.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backjoon/bronze/bronze3/a11022.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backjoon/bronze/bronze3/a2438.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backjoon/bronze/bronze3/a2439.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backjoon/bronze/bronze3/a2739.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backjoon/bronze/bronze3/a2741.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backjoon/bronze/bronze3/a2742.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backjoon/bronze/bronze3/a2884.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backjoon/bronze/bronze3/a8393.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backjoon/bronze/bronze4/a1008.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backjoon/bronze/bronze4/a1330.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backjoon/bronze/bronze4/a14681.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backjoon/bronze/bronze4/a1712.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backjoon/bronze/bronze4/a2480.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backjoon/bronze/bronze4/a2525.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backjoon/bronze/bronze4/a2588.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backjoon/bronze/bronze4/a2753.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backjoon/bronze/bronze4/a9498.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backjoon/bronze/bronze5/a1000.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backjoon/bronze/bronze5/a1001.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backjoon/bronze/bronze5/a10171.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backjoon/bronze/bronze5/a10430.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backjoon/bronze/bronze5/a10718.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backjoon/bronze/bronze5/a10757.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backjoon/bronze/bronze5/a10869.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backjoon/bronze/bronze5/a10926.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backjoon/bronze/bronze5/a10998.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backjoon/bronze/bronze5/a11654.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backjoon/bronze/bronze5/a18108.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backjoon/bronze/bronze5/a25083.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backjoon/bronze/bronze5/a2557.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backjoon/silver/silver4/a1065.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backjoon/silver/silver4/a1978.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backjoon/silver/silver5/a1316.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backjoon/silver/silver5/a2941.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backjoon/silver/silver5/a4673.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/backjoon/silver/silver2/a18111.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backjoon/bronze/a1000.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backjoon/bronze/a1001.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backjoon/bronze/a1008.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backjoon/bronze/a10171.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backjoon/bronze/a10430.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backjoon/bronze/a10718.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backjoon/bronze/a10809.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backjoon/bronze/a10818.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backjoon/bronze/a10869.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backjoon/bronze/a10871.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backjoon/bronze/a10926.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backjoon/bronze/a10950.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backjoon/bronze/a10951.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backjoon/bronze/a10952.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backjoon/bronze/a10998.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backjoon/bronze/a11021.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backjoon/bronze/a11022.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backjoon/bronze/a1110.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backjoon/bronze/a1152.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backjoon/bronze/a1157.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backjoon/bronze/a11654.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backjoon/bronze/a11720.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backjoon/bronze/a1330.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backjoon/bronze/a14681.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backjoon/bronze/a1546.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backjoon/bronze/a15552.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backjoon/bronze/a15596.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backjoon/bronze/a1712.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backjoon/bronze/a18108.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backjoon/bronze/a2292.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backjoon/bronze/a2438.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backjoon/bronze/a2439.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backjoon/bronze/a2480.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backjoon/bronze/a25083.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backjoon/bronze/a2525.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backjoon/bronze/a2557.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backjoon/bronze/a2562.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backjoon/bronze/a2577.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backjoon/bronze/a2588.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backjoon/bronze/a2675.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backjoon/bronze/a2739.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backjoon/bronze/a2741.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backjoon/bronze/a2742.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backjoon/bronze/a2753.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backjoon/bronze/a2884.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backjoon/bronze/a2908.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backjoon/bronze/a3052.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backjoon/bronze/a4344.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backjoon/bronze/a5622.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backjoon/bronze/a8393.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backjoon/bronze/a8958.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backjoon/bronze/a9498.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backjoon/silver/a1065.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backjoon/silver/a1316.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backjoon/silver/a2941.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backjoon/silver/a4673.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,22 +34,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/82102/Desktop/programing/study-algorithm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "editor.preferences.tabs"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/82102/Desktop/programing/study-algorithm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.tabs&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
-    <configuration name="a1978" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="backjoon.silver.silver4.a1978" />
+    <configuration name="a18111" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="backjoon.silver.silver2.a18111" />
       <module name="study-algorithm" />
       <extension name="coverage">
         <pattern>
@@ -181,7 +63,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.a1978" />
+        <item itemvalue="Application.a18111" />
       </list>
     </recent_temporary>
   </component>
