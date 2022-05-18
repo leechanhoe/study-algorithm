@@ -13,12 +13,15 @@ public class a18111 {
         int b = Integer.parseInt(input[2]);
         int[][] ground = new int[n][m];
         int heightSum = 0;
+        int minHeight = 256;
 
         for (int i = 0; i < n; i++) { // 초기화
             String[] width = br.readLine().split(" ");
             for (int j = 0; j < m; j++) {
                 ground[i][j] = Integer.parseInt(width[j]);
                 heightSum += ground[i][j];
+                if(minHeight > ground[i][j])
+                    minHeight = ground[i][j];
             }
         }
 
@@ -26,14 +29,14 @@ public class a18111 {
         int optimunHeight = 0; // 최적의 높이
         int minTime = Integer.MAX_VALUE;// 최적의 시간
 
-        for(int curHeight = possibleHeight;curHeight >= 0;curHeight--) { //가능한 높이들 다 땅고르기작업시도해서 최적높이 구하기
+        for(int curHeight = possibleHeight;curHeight >= minHeight;curHeight--) { //가능한 높이들 다 땅고르기작업시도해서 최적높이 구하기
             int reqTime = 0;
             for (int i = 0; i < n; i++) {
                 for (int j = 0; j < m; j++) {
                     if (curHeight > ground[i][j])
                         reqTime += curHeight - ground[i][j];
                     else if (curHeight < ground[i][j])
-                        reqTime += (ground[i][j] - curHeight) * 2;
+                        reqTime += (ground[i][j] - curHeight) << 1;
                 }
             }
             if(minTime > reqTime){
