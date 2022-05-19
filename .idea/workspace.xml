@@ -5,11 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7a047fd1-3834-4cac-ac18-9b603b31a7d8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/backjoon/silver/silver3/a1929.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backjoon/silver/silver5/a11653.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backjoon/silver/silver5/a2581.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/backjoon/silver/silver1/a9020.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/backjoon/silver/silver2/a4948.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backjoon/silver/silver2/a18111.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/backjoon/silver/silver2/a18111.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,8 +49,8 @@
   }
 }</component>
   <component name="RunManager">
-    <configuration name="a1929" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="backjoon.silver.silver3.a1929" />
+    <configuration name="a9020" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="backjoon.silver.silver1.a9020" />
       <module name="study-algorithm" />
       <extension name="coverage">
         <pattern>
@@ -66,7 +64,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.a1929" />
+        <item itemvalue="Application.a9020" />
       </list>
     </recent_temporary>
   </component>
