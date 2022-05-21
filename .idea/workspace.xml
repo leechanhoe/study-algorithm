@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7a047fd1-3834-4cac-ac18-9b603b31a7d8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/backjoon/bronze/bronze2/a10870.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backjoon/bronze/bronze3/a10872.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backjoon/silver/silver1/a11729.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backjoon/silver/silver5/a17478.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/backjoon/bronze/bronze2/a2231.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/backjoon/bronze/bronze2/a2798.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/backjoon/silver/silver1/a2447.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -37,22 +36,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/82102/Desktop/programing/study-algorithm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/82102/Desktop/programing/study-algorithm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
-    <configuration name="a11729" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="backjoon.silver.silver1.a11729" />
+    <configuration name="a2231" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="backjoon.bronze.bronze2.a2231" />
       <module name="study-algorithm" />
       <option name="VM_PARAMETERS" value="-Dfile.encoding=UTF-8" />
       <extension name="coverage">
@@ -67,7 +66,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.a11729" />
+        <item itemvalue="Application.a2231" />
       </list>
     </recent_temporary>
   </component>
