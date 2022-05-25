@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7a047fd1-3834-4cac-ac18-9b603b31a7d8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/backjoon/silver/silver5/a1427.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/backjoon/silver/silver5/a11650.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/backjoon/silver/silver5/a11651.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -48,8 +49,8 @@
   }
 }</component>
   <component name="RunManager">
-    <configuration name="a1427" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="backjoon.silver.silver5.a1427" />
+    <configuration name="a11651" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="backjoon.silver.silver5.a11651" />
       <module name="study-algorithm" />
       <option name="VM_PARAMETERS" value="-Dfile.encoding=UTF-8" />
       <extension name="coverage">
@@ -64,7 +65,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.a1427" />
+        <item itemvalue="Application.a11651" />
       </list>
     </recent_temporary>
   </component>
