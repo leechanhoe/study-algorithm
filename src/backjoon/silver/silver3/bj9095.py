@@ -1,4 +1,4 @@
-import math
+import math # 알고보니 이문제는 점화식 f(n) = f(n-1) + f(n-2) + f(n-3)이 있었다..
 dp = [0] * 12
 
 def match(n):
