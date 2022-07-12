@@ -9,4 +9,5 @@ for i in range(len(a)):
             ps = cache[j]
         elif a[i] == b[j]:
             cache[j] = ps + 1
+    print(cache)
 print(max(cache))
