@@ -1,4 +1,3 @@
-from ast import Return
 import sys
 
 sys.setrecursionlimit(10 ** 8)
@@ -69,10 +68,6 @@ for i in range(M):
     r, c, s, d, z = map(int, input().split())
     r, c = r - 1, c - 1
     board[r][c] = (s, d, z)
-    # s : speed
-    # d : 1(up), 2(down), 3(right), 4(left)
-    # z : size
-
 
 ans = 0
 for j in range(C):
