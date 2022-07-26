@@ -1,8 +1,7 @@
 package backjoon.bronze.bronze3;
-import java.util.*;
 import java.io.*;
 
-class a2741
+class bj2741
 {
     public static void main (String[] args) throws java.lang.Exception
     {

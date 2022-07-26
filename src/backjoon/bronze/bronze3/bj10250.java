@@ -2,7 +2,7 @@ package backjoon.bronze.bronze3;
 
 import java.io.*;
 
-public class a10250 {
+public class bj10250 {
 
     public static void main (String[] args) throws java.lang.Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

@@ -1,5 +1,4 @@
 package backjoon.silver.silver5;
-import java.util.*;
 import java.io.*;
 
 class a4673

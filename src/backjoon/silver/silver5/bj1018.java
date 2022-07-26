@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.StringTokenizer;
 
-public class a1018 {
+public class bj1018 {
     static char[][][] chess = new char[2][8][8];
     public static void main(String[] args) throws java.lang.Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

@@ -2,7 +2,7 @@ package backjoon.silver.silver5;
 
 import java.io.*;
 
-public class a17478 {
+public class bj17478 {
 
     static StringBuilder sb = new StringBuilder();
     public static void main (String[] args) throws java.lang.Exception {

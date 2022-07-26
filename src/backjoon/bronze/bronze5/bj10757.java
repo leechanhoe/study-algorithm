@@ -1,7 +1,7 @@
 package backjoon.bronze.bronze5;
 import java.io.*;
 
-public class a10757 {
+public class bj10757 {
 
     public static void main (String[] args) throws java.lang.Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

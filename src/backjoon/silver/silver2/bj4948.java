@@ -3,7 +3,7 @@ package backjoon.silver.silver2;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-public class a4948 {
+public class bj4948 {
     static boolean[] primes = new boolean[123456 * 2 + 1];
     public static void main (String[] args) throws java.lang.Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

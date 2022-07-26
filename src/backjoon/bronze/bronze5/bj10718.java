@@ -1,5 +1,5 @@
 package backjoon.bronze.bronze5;
-public class a10718
+public class bj10718
 {
     public static void main(String[] args)
     {

@@ -1,5 +1,4 @@
 package backjoon.bronze.bronze2;
-import java.util.*;
 import java.io.*;
 
 class a8958

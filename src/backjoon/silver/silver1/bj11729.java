@@ -5,7 +5,7 @@ import java.io.BufferedWriter;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
-public class a11729 {
+public class bj11729 {
     static StringBuilder sb = new StringBuilder();
     static int count = 0;
 

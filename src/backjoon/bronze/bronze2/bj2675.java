@@ -3,7 +3,7 @@ package backjoon.bronze.bronze2;
 import java.io.*;
 import java.util.StringTokenizer;
 
-public class a2675 {
+public class bj2675 {
     public static void main (String[] args) throws java.lang.Exception
     {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

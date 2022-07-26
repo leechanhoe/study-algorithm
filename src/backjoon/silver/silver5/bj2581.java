@@ -1,7 +1,7 @@
 package backjoon.silver.silver5;
 import java.io.*;
 
-public class a2581 {
+public class bj2581 {
     public static void main (String[] args) throws java.lang.Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));

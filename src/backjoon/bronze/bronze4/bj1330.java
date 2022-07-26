@@ -1,7 +1,7 @@
 package backjoon.bronze.bronze4;
 import java.util.Scanner;
 
-public class a1330 {
+public class bj1330 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int a = sc.nextInt();

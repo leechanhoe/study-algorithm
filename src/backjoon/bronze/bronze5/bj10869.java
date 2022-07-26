@@ -1,6 +1,6 @@
 package backjoon.bronze.bronze5;
 import java.util.Scanner;
-public class a10869
+public class bj10869
 {
     public static void main(String[] args)
     {

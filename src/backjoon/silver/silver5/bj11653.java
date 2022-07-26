@@ -2,7 +2,7 @@ package backjoon.silver.silver5;
 
 import java.io.*;
 
-public class a11653 {
+public class bj11653 {
     public static void main (String[] args) throws java.lang.Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));

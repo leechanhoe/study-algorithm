@@ -2,7 +2,7 @@ package backjoon.bronze.bronze3;
 import java.util.*;
 import java.io.*;
 
-class a10951
+class bj10951
 {
     public static void main (String[] args) throws java.lang.Exception
     {

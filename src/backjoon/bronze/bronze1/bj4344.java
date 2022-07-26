@@ -1,8 +1,7 @@
 package backjoon.bronze.bronze1;
-import java.util.*;
 import java.io.*;
 
-class a4344
+class bj4344
 {
     public static void main (String[] args) throws java.lang.Exception
     {
@@ -11,7 +10,6 @@ class a4344
 
         for(int i = 0;i < n;i++){
             String[] input = br.readLine().split(" ");
-            int studentNum = Integer.parseInt(input[0]);
             int[] scores = new int[input.length - 1];
             int sum = 0;
 

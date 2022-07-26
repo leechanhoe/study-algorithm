@@ -2,7 +2,7 @@ package backjoon.bronze.bronze4;
 import java.io.*;
 import java.util.StringTokenizer;
 
-public class a1712 {
+public class bj1712 {
 
     public static void main (String[] args) throws java.lang.Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

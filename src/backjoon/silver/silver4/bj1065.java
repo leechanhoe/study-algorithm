@@ -1,8 +1,7 @@
 package backjoon.silver.silver4;
-import java.util.*;
 import java.io.*;
 
-class a1065
+class bj1065
 {
     public static void main (String[] args) throws java.lang.Exception
     {

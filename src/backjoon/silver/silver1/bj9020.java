@@ -3,7 +3,7 @@ package backjoon.silver.silver1;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-public class a9020 {
+public class bj9020 {
     static boolean[] primes = new boolean[10001];
 
     public static void main(String[] args) throws java.lang.Exception {
