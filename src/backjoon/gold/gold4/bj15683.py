@@ -50,8 +50,6 @@ def dfs(board, tv_num):
         dfs(nb, tv_num + 1)
         dir = rotate(dir)
         
-        
-
 N, M = map(int, input().split())
 board = [list(map(int, input().split())) for _ in range(N)]
 tv_type = [0, [1, 0, 0, 0], [1, 0, -1, 0], [1, -1, 0, 0], [1, -1, -1, 0], [1, -1, -1, 1]] # [우, 상, 좌, 하]
