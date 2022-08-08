@@ -65,6 +65,9 @@ void solve(){
         }
     }
 
+    for(int i = 1; i <= N; i++)
+        cout << sccindegree[i] << ' ';
+
     for(int i = 0; i < sccCnt; i++){
         if(!sccindegree[i])
             result++;
