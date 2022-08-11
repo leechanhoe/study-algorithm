@@ -1,3 +1,119 @@
+# import sys
+# import copy
+# input = lambda : sys.stdin.readline().rstrip()
+# u, d, f, b, l, r = range(6)
+
+# def rotate_clock(side, nside, clock):
+#     for i in range(3):
+#         for j in range(3):
+#             nside[i][j] = side[2-j][i] if clock else side[j][2-i]
+
+# def rotate(side, clock, cub):
+#     ncube = copy.deepcopy(cub)
+
+#     clock = True if clock == '+' else False
+
+#     if side == 'U':
+#         side = u
+#         if clock:
+#             for i in range(3):
+#                 ncube[f][0][i] = cub[r][0][i]
+#                 ncube[l][0][i] = cub[f][0][i]
+#                 ncube[b][0][i] = cub[l][0][i]
+#                 ncube[r][0][i] = cub[b][0][i]
+#         else:
+#             for i in range(3):
+#                 ncube[r][0][i] = cub[f][0][i]
+#                 ncube[f][0][i] = cub[l][0][i]
+#                 ncube[l][0][i] = cub[b][0][i]
+#                 ncube[b][0][i] = cub[r][0][i]
+#     elif side == 'D':
+#         side = d
+#         if clock:
+#             for i in range(3):
+#                 ncube[r][2][i] = cub[f][2][i]
+#                 ncube[b][2][i] = cub[r][2][i]
+#                 ncube[l][2][i] = cub[b][2][i]
+#                 ncube[f][2][i] = cub[l][2][i]
+#         else:
+#             for i in range(3):
+#                 ncube[l][2][i] = cub[f][2][i]
+#                 ncube[b][2][i] = cub[l][2][i]
+#                 ncube[r][2][i] = cub[b][2][i]
+#                 ncube[f][2][i] = cub[r][2][i]
+#     elif side == 'F':
+#         side = f
+#         if clock:
+#             for i in range(3):
+#                 ncube[u][2][i] = cub[l][2-i][2]
+#                 ncube[r][i][0] = cub[u][2][i]
+#                 ncube[d][0][i] = cub[r][2-i][0]
+#                 ncube[l][i][2] = cub[d][0][i]
+#         else:
+#             for i in range(3):
+#                 ncube[l][i][2] = cub[u][2][2-i]
+#                 ncube[d][0][i] = cub[l][i][2]
+#                 ncube[r][i][0] = cub[d][0][2-i]
+#                 ncube[u][2][i] = cub[r][i][0]
+#     elif side == 'B':
+#         side = b
+#         if clock:
+#             for i in range(3):
+#                 ncube[l][i][0] = cub[u][0][2-i]
+#                 ncube[b][2][i] = cub[l][i][0]
+#                 ncube[r][i][2] = cub[b][2][2-i]
+#                 ncube[u][0][i] = cub[r][i][2]
+#         else:
+#             for i in range(3):
+#                 ncube[u][0][i] = cub[l][2-i][0]
+#                 ncube[r][i][2] = cub[u][0][i]
+#                 ncube[b][2][i] = cub[r][2-i][2]
+#                 ncube[l][i][0] = cub[b][2][i]
+#     elif side == 'L':
+#         side = l
+#         if clock:
+#             for i in range(3):
+#                 ncube[f][i][0] = cub[u][i][0]
+#                 ncube[d][i][0] = cub[f][i][0]
+#                 ncube[b][i][2] = cub[d][2-i][0]
+#                 ncube[u][i][0] = cub[b][2-i][2]
+#         else:
+#             for i in range(3):
+#                 ncube[u][i][0] = cub[f][i][0]
+#                 ncube[b][i][2] = cub[u][2-i][0]
+#                 ncube[d][i][0] = cub[b][2-i][2]
+#                 ncube[f][i][0] = cub[d][i][0]
+#     else:
+#         side = r
+#         if clock:
+#             for i in range(3):
+#                 ncube[b][i][0] = cub[u][2-i][2]
+#                 ncube[d][i][2] = cub[b][2-i][0]
+#                 ncube[f][i][2] = cub[d][i][2]
+#                 ncube[u][i][2] = cub[f][i][2]
+#         else:
+#             for i in range(3):
+#                 ncube[u][i][2] = cub[b][2-i][0]
+#                 ncube[f][i][2] = cub[u][i][2]
+#                 ncube[d][i][2] = cub[f][i][2]
+#                 ncube[b][i][0] = cub[d][2-i][2]
+
+#     rotate_clock(cub[side], ncube[side], clock)
+#     return ncube
+
+# for _ in range(int(input())):
+#     N = int(input())
+#     com = input().split()
+#     cube = []
+#     for ch in ['w', 'y', 'r', 'o', 'g', 'b']:
+#         cube.append([[ch] * 3 for _ in range(3)])
+
+#     for c in com:
+#         cube = rotate(c[0], c[1], cube)
+    
+#     for j in range(3):
+#         print(''.join(cube[1][j]))
+
 import sys
 input = sys.stdin.readline
 def rotate(color, ro):
@@ -107,4 +223,4 @@ for i in range(t):
         p, ro = list(i)
         rotation(p, ro)
     for i in range(3):
-        print(''.join(y[i]))
+        print(''.join(w[i]))
