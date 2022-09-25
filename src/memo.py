@@ -1,110 +1,104 @@
+from collections import deque
 import sys
-input = sys.stdin.readline
-def rotate(color, ro):
-    if ro == "-":
-        temp = [[0] * 3 for i in range(3)]
-        for i in range(3):
-            for j in range(3):
-                temp[2 - j][i] = color[i][j]
-        return temp
-    else:
-        temp = [[0] * 3 for i in range(3)]
-        for i in range(3):
-            for j in range(3):
-                temp[j][2 - i] = color[i][j]
-        return temp
-def rotation(p, ro):
-    global w, y, r, o, g, b
-    if p == "U":
-        if ro == "-":
-            r1, r2, r3, b1, b2, b3 = r[0][0], r[0][1], r[0][2], b[0][0], b[0][1], b[0][2]
-            o1, o2, o3, g1, g2, g3 = o[0][0], o[0][1], o[0][2], g[0][0], g[0][1], g[0][2]
-            r[0][0], r[0][1], r[0][2], b[0][0], b[0][1], b[0][2] = g1, g2, g3, r1, r2, r3
-            o[0][0], o[0][1], o[0][2], g[0][0], g[0][1], g[0][2] = b1, b2, b3, o1, o2, o3
-            w = rotate(w, ro)
-        else:
-            r1, r2, r3, b1, b2, b3 = r[0][0], r[0][1], r[0][2], b[0][0], b[0][1], b[0][2]
-            o1, o2, o3, g1, g2, g3 = o[0][0], o[0][1], o[0][2], g[0][0], g[0][1], g[0][2]
-            r[0][0], r[0][1], r[0][2], b[0][0], b[0][1], b[0][2] = b1, b2, b3, o1, o2, o3
-            o[0][0], o[0][1], o[0][2], g[0][0], g[0][1], g[0][2] = g1, g2, g3, r1, r2, r3
-            w = rotate(w, ro)
-    elif p == "D":
-        if ro == "-":
-            r1, r2, r3, b1, b2, b3 = r[2][0], r[2][1], r[2][2], b[2][0], b[2][1], b[2][2]
-            o1, o2, o3, g1, g2, g3 = o[2][0], o[2][1], o[2][2], g[2][0], g[2][1], g[2][2]
-            r[2][0], r[2][1], r[2][2], b[2][0], b[2][1], b[2][2] = b1, b2, b3, o1, o2, o3
-            o[2][0], o[2][1], o[2][2], g[2][0], g[2][1], g[2][2] = g1, g2, g3, r1, r2, r3
-            y = rotate(y, ro)
-        else:
-            r1, r2, r3, b1, b2, b3 = r[2][0], r[2][1], r[2][2], b[2][0], b[2][1], b[2][2]
-            o1, o2, o3, g1, g2, g3 = o[2][0], o[2][1], o[2][2], g[2][0], g[2][1], g[2][2]
-            r[2][0], r[2][1], r[2][2], b[2][0], b[2][1], b[2][2] = g1, g2, g3, r1, r2, r3
-            o[2][0], o[2][1], o[2][2], g[2][0], g[2][1], g[2][2] = b1, b2, b3, o1, o2, o3
-            y = rotate(y, ro)
-    elif p == "F":
-        if ro == "-":
-            y1, y2, y3, w1, w2, w3 = y[0][0], y[0][1], y[0][2], w[2][0], w[2][1], w[2][2]
-            b1, b2, b3, g1, g2, g3 = b[0][0], b[1][0], b[2][0], g[0][2], g[1][2], g[2][2]
-            y[0][0], y[0][1], y[0][2], w[2][0], w[2][1], w[2][2] = g1, g2, g3, b1, b2, b3
-            b[0][0], b[1][0], b[2][0], g[0][2], g[1][2], g[2][2] = y3, y2, y1, w3, w2, w1
-            r = rotate(r, ro)
-        else:
-            y1, y2, y3, w1, w2, w3 = y[0][0], y[0][1], y[0][2], w[2][0], w[2][1], w[2][2]
-            b1, b2, b3, g1, g2, g3 = b[0][0], b[1][0], b[2][0], g[0][2], g[1][2], g[2][2]
-            y[0][0], y[0][1], y[0][2], w[2][0], w[2][1], w[2][2] = b3, b2, b1, g3, g2, g1
-            b[0][0], b[1][0], b[2][0], g[0][2], g[1][2], g[2][2] = w1, w2, w3, y1, y2, y3
-            r = rotate(r, ro)
-    elif p == "B":
-        if ro == "-":
-            w1, w2, w3, b1, b2, b3 = w[0][0], w[0][1], w[0][2], b[0][2], b[1][2], b[2][2]
-            g1, g2, g3, y1, y2, y3 = g[0][0], g[1][0], g[2][0], y[2][0], y[2][1], y[2][2]
-            w[0][0], w[0][1], w[0][2], b[0][2], b[1][2], b[2][2] = g3, g2, g1, w1, w2, w3
-            g[0][0], g[1][0], g[2][0], y[2][0], y[2][1], y[2][2] = y1, y2, y3, b3, b2, b1
-            o = rotate(o, ro)
-        else:
-            w1, w2, w3, b1, b2, b3 = w[0][0], w[0][1], w[0][2], b[0][2], b[1][2], b[2][2]
-            g1, g2, g3, y1, y2, y3 = g[0][0], g[1][0], g[2][0], y[2][0], y[2][1], y[2][2]
-            w[0][0], w[0][1], w[0][2], b[0][2], b[1][2], b[2][2] = b1, b2, b3, y3, y2, y1
-            g[0][0], g[1][0], g[2][0], y[2][0], y[2][1], y[2][2] = w3, w2, w1, g1, g2, g3
-            o = rotate(o, ro)
-    elif p == "L":
-        if ro == "-":
-            w1, w2, w3, r1, r2, r3 = w[0][0], w[1][0], w[2][0], r[0][0], r[1][0], r[2][0]
-            y1, y2, y3, o1, o2, o3 = y[0][0], y[1][0], y[2][0], o[0][2], o[1][2], o[2][2]
-            w[0][0], w[1][0], w[2][0], r[0][0], r[1][0], r[2][0] = r1, r2, r3, y1, y2, y3
-            y[0][0], y[1][0], y[2][0], o[0][2], o[1][2], o[2][2] = o3, o2, o1, w3, w2, w1
-            g = rotate(g, ro)
-        else:
-            w1, w2, w3, r1, r2, r3 = w[0][0], w[1][0], w[2][0], r[0][0], r[1][0], r[2][0]
-            y1, y2, y3, o1, o2, o3 = y[0][0], y[1][0], y[2][0], o[0][2], o[1][2], o[2][2]
-            w[0][0], w[1][0], w[2][0], r[0][0], r[1][0], r[2][0] = o3, o2, o1, w1, w2, w3
-            y[0][0], y[1][0], y[2][0], o[0][2], o[1][2], o[2][2] = r1, r2, r3, y3, y2, y1
-            g = rotate(g, ro)
-    elif p == "R":
-        if ro == "-":
-            w1, w2, w3, r1, r2, r3 = w[0][2], w[1][2], w[2][2], r[0][2], r[1][2], r[2][2]
-            y1, y2, y3, o1, o2, o3 = y[0][2], y[1][2], y[2][2], o[0][0], o[1][0], o[2][0]
-            w[0][2], w[1][2], w[2][2], r[0][2], r[1][2], r[2][2] = o3, o2, o1, w1, w2, w3
-            y[0][2], y[1][2], y[2][2], o[0][0], o[1][0], o[2][0] = r1, r2, r3, y3, y2, y1
-            b = rotate(b, ro)
-        else:
-            w1, w2, w3, r1, r2, r3 = w[0][2], w[1][2], w[2][2], r[0][2], r[1][2], r[2][2]
-            y1, y2, y3, o1, o2, o3 = y[0][2], y[1][2], y[2][2], o[0][0], o[1][0], o[2][0]
-            w[0][2], w[1][2], w[2][2], r[0][2], r[1][2], r[2][2] = r1, r2, r3, y1, y2, y3
-            y[0][2], y[1][2], y[2][2], o[0][0], o[1][0], o[2][0] = o3, o2, o1, w3, w2, w1
-            b = rotate(b, ro)
-t = int(input())
-for i in range(t):
-    w = [["w"] * 3 for i in range(3)]
-    y = [["y"] * 3 for i in range(3)]
-    r = [["r"] * 3 for i in range(3)]
-    o = [["o"] * 3 for i in range(3)]
-    g = [["g"] * 3 for i in range(3)]
-    b = [["b"] * 3 for i in range(3)]
-    n = int(input())
-    s = input().split()
-    for i in s:
-        p, ro = list(i)
-        rotation(p, ro)
+import heapq
+from copy import deepcopy
+
+
+def bfs():  # 너비 우선 탐색 - 완전탐색이므로 최적해를 구한다
+    print("목표 상태를 입력하세요.\n예시\n1 2 3\n4 5 6\n7 8 0")
+    goal = []  # 1차원 배열로 저장
     for i in range(3):
-        print(''.join(y[i]))
+        goal += input().split()
+
+    print("처음 상태를 입력하세요.")
+    board = []  # 1차원 배열로 저장
+    for i in range(3):
+        board += input().split()
+
+    dq = deque()
+    dq.append([board, board.index("0"), 0])
+    visit = {}
+    visit["".join(board)] = True
+
+    while dq:
+        now, blank, cnt = dq.popleft()
+        if now == goal:
+            print(f"최소 이동 횟수 : {cnt}")
+            exit(0)
+
+        for dir in [1, -1, 3, -3]:  # 우, 좌, 하, 상
+            nBlank = dir + blank
+
+            if 0 <= nBlank < 9:
+                next = deepcopy(now)
+                next[blank], next[nBlank] = next[nBlank], next[blank]
+
+                conv = "".join(next)  # 방문체크를 하기위해 현재 상태를 문자열로 변환
+                if conv not in visit:  # 공간복잡도를 줄이기 위해 딕셔너리로 방문체크
+                    visit[conv] = True
+                    dq.append([next, nBlank, cnt + 1])
+    print("도달할 수 없는 목표입니다.")
+
+
+def h(board, goal):  # 휴리스틱 함수 -> 목표와 다른 칸의 개수를 반환
+    ret = 0
+    for i in range(9):
+        if(board[i] != goal[i]):
+            ret += 1
+    return ret
+
+
+def dfs(visit, now, goal, blank, cnt):  # 깊이 우선 탐색 dfs(방문체크, 현재상태, 목표상태, 0의 위치, 현재까지의 비용)
+    if now == goal:
+        print(f"최소 이동 횟수 : {cnt}")
+
+    if cnt > 2987:  # 스택오버플로우 한계 - 최대 깊이를 탐색해도 정답이 없으면
+        print("도달할 수 없는 목표입니다.")
+        exit(0)
+
+    hq = []
+    for dir in [1, -1, 3, -3]:  # 우, 좌, 하, 상
+        nBlank = blank + dir
+
+        if 0 <= nBlank < 9:
+            next = deepcopy(now)
+            next[blank], next[nBlank] = next[nBlank], next[blank]
+
+            convert = "".join(next)  # 방문체크를 하기위해 현재 상태를 문자열로 변환
+            if convert not in visit:  # 공간복잡도를 줄이기 위해 딕셔너리로 방문체크
+                visit[convert] = True
+                # 우선순위 큐(최소힙)를 활용해 f(n)의 최솟값부터 탐색
+                # cnt + h(next, goal) = g(n) + h(n)
+                heapq.heappush(hq, (cnt + h(next, goal), next, nBlank))
+
+    while hq:
+        fn, next, nBlank = heapq.heappop(hq)  # 작은 값부터 꺼내 dfs
+        dfs(visit, next, goal, nBlank, cnt + 1)
+
+
+def aStar():  # A* 알고리즘
+    sys.setrecursionlimit(10 ** 7)
+    print("목표 상태를 입력하세요.\n예시\n1 2 3\n4 5 6\n7 8 0")
+    goal = []  # 1차원 배열로 저장
+    for i in range(3):
+        goal += input().split()
+
+    print("처음 상태를 입력하세요.")
+    board = []  # 1차원 배열로 저장
+    for i in range(3):
+        board += input().split()
+
+    visit = {}  # 방문체크
+    visit["".join(board)] = True  # 공간복잡도를 줄이기 위해 문자열로 변환 후 딕셔너리에 저장
+
+    dfs(visit, board, goal, board.index("0"), 0)
+    print("도달할 수 없는 목표입니다.")
+
+
+print("최적해를 구하는 BFS알고리즘 : 0입력\n근사해를 구하는 A*알고리즘 : 1입력")
+mode = int(input())
+
+if(mode == 0):
+    bfs()
+else:
+    aStar()
