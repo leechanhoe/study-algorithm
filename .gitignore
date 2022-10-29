@@ -31,3 +31,4 @@ bin/
 # user
 .idea/
 *.exe
+src/memo.py
