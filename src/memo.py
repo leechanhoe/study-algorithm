@@ -1,121 +1,139 @@
-game_board = "*_________" # 칸 번호와 인덱스가 일치하게끔 설계
+import random as rd
+import matplotlib.pyplot as plt
 
-AI = True
-AI_MARK = "O"
+MAX_GENE = 1000 # 최대 반복
+POP_SIZE = 20 # 염색체 개수
+MUT_RATE = 0.3 # 돌연변이 확률
+SIZE = 8 # 염색체의 원소 개수
+GOAL = 28 # 최적 적합도
 
-HUMAN = False
-HUMAN_MARK = "X"
+'''
+구조적으로 한 행에 최대 하나의 퀸만 배치 가능하므로 
+1차원 배열로 체스판을 [a, b, c, d, e, f, g, h]로 표현 -> a가 3이면 0행 3열
+[3,3, ...]이면 같은 열에 2개가 있어서 중복
+'''
 
-
-
-def main():
-    print("1. AI")
-    print("2. HUMAN")
-    user_input = input("Select First Player : ")
-        
-    if user_input == "1":
-        player = AI
-        
-    elif user_input == "2":
-        player = HUMAN
-            
-    else:
-        print("Incorrect Input.")
-        user_input = input("Select First Player : ")
-        
-    if player == HUMAN:
-        show()
-            
-    while findEmpty(game_board) and not isEnd(game_board):
-        if player == AI:
-            index, _ = minimax(game_board, 9, AI)
-            place(index, AI_MARK)
-            player = HUMAN
-            
-        else:
-            index = indexInput()
-            place(index, HUMAN_MARK)
-            player = AI
-            
-        show()   
-    ending()
-
-def findEmpty(board): # 빈 칸의 인덱스가 담긴 튜플을 리턴
-    return tuple(x for x, cell in enumerate(board) if cell == "_")
-
-def isWin(board, player_mark):
-    for (a, b, c) in ((1, 2, 3), (4, 5, 6), (7, 8, 9),
-                      (1, 4, 7), (2, 5, 8), (3, 6, 9),
-                      (1, 5, 9), (3, 5, 7)):
-        if board[a] == board[b] == board[c]:
-            if board[a] == player_mark:
-                return True
+class Chromosome:
+    def __init__(self, g=[]): # 생성자
+        self.genes = g.copy()
+        self.fitness = 0
+        if self.genes.__len__() == 0:
+            for _ in range(SIZE): # 랜덤으로 생성
+                self.genes.append(rd.randrange(SIZE))
+        self.cal_fitness()
     
-    return False
+    def getFitness(self):
+        return self.fitness
 
-def isEnd(board):
-    return isWin(board, AI_MARK) or isWin(board, HUMAN_MARK)
-
-def evaluate(board): # 누군가 이겼으면 -1, 1 (True) 를 리턴, 그렇지 않으면 0 (False) 를 리턴
-    if isWin(board, AI_MARK): return 1
-    elif isWin(board, HUMAN_MARK): return -1
-    else: return 0
-
-def minimax(board, depth, player): # player 가 AI 면 최선의 수를, HUMAN 이면 최악의 수를 (HUMAN 입장에선 최선의 수) 둔다고 가정
-    index = -1
-    if (depth == 0) or (isEnd(board)) or not findEmpty(board):
-        return -1, evaluate(board)
+    def cal_fitness(self): # 적합도 불러오기
+        self.fitness = GOAL # 중복만큼 감소
         
-    if player == AI:
-        value = float('-inf')
-        for each in findEmpty(board):
-            _, score = minimax(board[:each] + AI_MARK + board[each+1:], depth-1, HUMAN)
-            if score > value:
-                value = score
-                index = each
-            if score == 1: # alpha 가지치기 / TicTacToe 에서 1 (승리) 보다 최선은 없으므로 1을 찾으면 바로 탐색 종료.
-                break
-        
-    else:
-        value = float('inf')
-        for each in findEmpty(board):
-            _, score = minimax(board[:each] + HUMAN_MARK + board[each+1:], depth-1, AI)
-            if score < value:
-                value = score
-                index = each
-            if score == -1: # beta 가지치기 / TicTacToe 에서 -1 (패배) 보다 최악은 없으므로 -1을 찾으면 바로 탐색 종료.
-                break
+        # 열 중복 체크
+        for column in range(SIZE):
+            if self.genes.count(column) > 1:
+            # count의 개수 = 한 열에 퀸 중복 개수
+                self.fitness -= self.genes.count(column)
                 
-    return index, value
-
-def isValid(index): # 착수 가능 위치인지 확인
-    return index in findEmpty(game_board)
-    
-def place(index, player_mark): # 착수
-    if isValid(index):
-        global game_board
-        game_board = game_board[:index] + player_mark + game_board[index+1:]
-
-def indexInput():
-    num = -1
-    while num not in findEmpty(game_board):
-        input_string = ''
-        while not input_string.isdecimal():
-            input_string = input("\nYour Turn : ")
-        num = int(input_string)
+        # \ 대각선 방향 중복 체크
+        test = self.genes.copy()
+        for i in range(SIZE):
+            test[i] += (SIZE - i - 1)
+        for rightdown in range(SIZE * 2 - 1):
+            if test.count(rightdown) > 1:
+                self.fitness -= test.count(rightdown)
         
-    return num
+        # / 대각선 방향 중복 체크
+        test = self.genes.copy()
+        for i in range(SIZE):
+            test[i] += i
+        for leftdown in range(SIZE * 2 - 1):
+            if test.count(leftdown) > 1:
+                self.fitness -= test.count(leftdown)
+                
+        return self.fitness
 
-def show():
-    print("--------------------")
-    print(game_board[1], game_board[2], game_board[3])
-    print(game_board[4], game_board[5], game_board[6])
-    print(game_board[7], game_board[8], game_board[9])
+def print_p(pop): # 출력
+    for i, x in enumerate(pop):
+        print(f"염색체 # {i} = {x.genes} 적합도 = {x.getFitness()}")
+    print()
     
-def ending():
-    if evaluate(game_board) == 1: print("AI WIN")
-    elif evaluate(game_board) == -1: print("HUMAN WIN")
-    else: print("TIE")
+def select(pop): # 부모 선택
+    # 적합도에 비례해 선택하면 안좋은 개체를 선택할 확률이 너무 높으므로 좋은 염색체를 남길 확률 더 증가
+    pro = [2 ** i for i in range(SIZE - 1, -1, -1)] 
+    pick = rd.uniform(0, sum(pro))
+    current = 0
+    for c in range(SIZE):
+        current += pro[c]
+        # 룰렛 알고리즘
+        if current > pick:
+            return pop[c]
+            
+def crossover(pop): # 교배
+    father = select(pop)
+    mother = select(pop)
+    half = rd.randrange(1, SIZE) # 염색체 합칠 때 기준점
+    child1 = father.genes[:half] + mother.genes[half:]
+    child2 = mother.genes[:half] + father.genes[half:]
+    return (child1, child2)
+
+def mutate(c): # 돌연변이
+    for i in range(SIZE):
+        if rd.random() < MUT_RATE: # 랜덤으로 하나 바꾸기
+            c.genes[i] = rd.randrange(SIZE)
+
+def getProgress(fitnessMean, fitnessBest, population): # 추이 반영
+    fitnessSum = 0 # 평균을 구하기 위한 합계
+    for c in population:
+        fitnessSum += c.getFitness()
+    fitnessMean.append(fitnessSum / POP_SIZE) # 세대의 평균 적합도 추가
+    fitnessBest.append(population[0].getFitness()) # 세대의 적합도가 가장 높은 염색체의 적합도 추이
+
+def drawChart(x, fitnessMean, fitnessBest, generation): # 추이 그래프 그리기
+    plt.plot(x, fitnessMean, "b", label="mean fitness")
+    plt.plot(x, fitnessBest, "r", label="best fitness")
+    plt.axhline(GOAL, 0, generation, color='lightgray', linestyle='--')
+    plt.axis([0, generation * 1.1, 0, GOAL + 1])
+    plt.xlabel("generation")
+    plt.ylabel("fitness")
+    plt.legend(loc='upper left')
+    plt.show()
+
+    
+def main():
+    population = []
+    fitnessMean = [] # 평균 적합도 추이
+    fitnessBest = [] # 첫번째 염색체의 적합도 추이
+
+    for _ in range(POP_SIZE):
+        population.append(Chromosome())
+    population.sort(key = lambda x: x.getFitness(), reverse=True)
+
+    generation = 0
+    while 1:
+        print("세대 번호 =", generation)
+        print_p(population)
+        generation += 1
+        
+        if population[0].getFitness() == GOAL or generation == MAX_GENE:
+            getProgress(fitnessMean, fitnessBest, population)
+            break
+        
+        new_pop = []
+        
+        for _ in range(POP_SIZE // 2):
+            c1, c2 = crossover(population)
+            new_pop.append(Chromosome(c1))
+            new_pop.append(Chromosome(c2))
+            
+        population = new_pop.copy()
+        for c in population:
+            mutate(c)
+        population.sort(key = lambda x: x.cal_fitness(), reverse=True)
+
+        getProgress(fitnessMean, fitnessBest, population)
+        
+    drawChart(range(1, generation + 1), fitnessMean, fitnessBest, generation)
+
 
 if __name__ == '__main__':
     main()
