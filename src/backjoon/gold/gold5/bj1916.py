@@ -18,14 +18,12 @@ def dijkstra(start):
                 heapq.heappush(hq, (next, nc))
     return dist
 
-N, M, X = map(int, input().split())
+N = int(input())
+M = int(input())
 graph = [[] for _ in range(N + 1)]
 for _ in range(M):
     a, b, c = map(int, input().split())
     graph[a].append((b, c))
 
-back = dijkstra(X)
-ans = 0
-for i in range(1, N + 1):
-    ans = max(ans, dijkstra(i)[X] + back[i])
-print(ans)
+start, end = map(int, input().split())
+print(dijkstra(start)[end])
