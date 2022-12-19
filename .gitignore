@@ -32,3 +32,4 @@ bin/
 .idea/
 *.exe
 src/memo.py
+*.iml
