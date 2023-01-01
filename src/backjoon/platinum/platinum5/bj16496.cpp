@@ -7,7 +7,9 @@ int N;
 string arr[1001];
 
 bool cmp(string a, string b){
-    return a < b;
+    if(a + b > b + a)
+        return true;
+    return false;
 }
 
 int main(){
@@ -15,13 +17,19 @@ int main(){
 
     cin >> N;
 
+    bool allZero = true;
     for(int i = 0; i < N; i++){
         cin >> arr[i];
+        if(arr[i] != "0")
+            allZero = false;
     }
 
-    sort(arr, arr + N, cmp);
-    for(int i = 0; i < N; i++)
-        cout << arr[i] << ' ';
-    
+    if(allZero)
+        cout << 0;
+    else{
+        sort(arr, arr + N, cmp);
+        for(string s : arr)
+            cout << s;
+    }
     return 0;
 }
