@@ -13,15 +13,14 @@ bool cmp(string a, string b){
 int main(){
     ios::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
 
-    cin >> N;
+    bool** a = new bool*[2];
+    a[0] = new bool[3]{false};
+    a[1] = new bool[3]{false};
 
-    for(int i = 0; i < N; i++){
-        cin >> arr[i];
+    if(!a[1][0])
+        cout << a[1][0] << 'b';
+    else{
+        cout << 'a';
     }
-
-    sort(arr, arr + N, cmp);
-    for(int i = 0; i < N; i++)
-        cout << arr[i] << ' ';
-    
     return 0;
 }
