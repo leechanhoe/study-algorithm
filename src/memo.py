@@ -1,139 +1,83 @@
-import random as rd
-import matplotlib.pyplot as plt
+import sys
+from collections import deque
+# sys.stdin = open("input.txt",'r')
+n,m,t = map(int,input().split()) #원판의 개수, 원판에 적힌 정수의 개수, T 번 회전
+board = [deque(int(x) for x in input().split()) for _ in range(n)]
+info = [[int(x) for x in input().split()] for _ in range(t)] # x배수, d 방향, k 칸 회전
+# d == 0 시계 방향 d == 1 반시계 방향
 
-MAX_GENE = 1000 # 최대 반복
-POP_SIZE = 20 # 염색체 개수
-MUT_RATE = 0.3 # 돌연변이 확률
-SIZE = 8 # 염색체의 원소 개수
-GOAL = 28 # 최적 적합도
 
-'''
-구조적으로 한 행에 최대 하나의 퀸만 배치 가능하므로 
-1차원 배열로 체스판을 [a, b, c, d, e, f, g, h]로 표현 -> a가 3이면 0행 3열
-[3,3, ...]이면 같은 열에 2개가 있어서 중복
-'''
-
-class Chromosome:
-    def __init__(self, g=[]): # 생성자
-        self.genes = g.copy()
-        self.fitness = 0
-        if self.genes.__len__() == 0:
-            for _ in range(SIZE): # 랜덤으로 생성
-                self.genes.append(rd.randrange(SIZE))
-        self.cal_fitness()
+for tc in range(t):
+    x,d,k = info[tc]
+    # 회전하기
+    result = 0
+    for i in range(n):
+        result += sum(board[i])
+        if (i+1)%x == 0:
+            if d == 0:
+                board[i].rotate(k)
+            else:
+                board[i].rotate(-k)
     
-    def getFitness(self):
-        return self.fitness
+    # 원판에 수가 남아 있으면, 인접하면서 수가 같은 것을 모두 찾는다
+    if result != 0:
 
-    def cal_fitness(self): # 적합도 불러오기
-        self.fitness = GOAL # 중복만큼 감소
+        #그러한 수가 있는 경우에는 원판에서 인접하면서 같은 수를 모두 지운다.
         
-        # 열 중복 체크
-        for column in range(SIZE):
-            if self.genes.count(column) > 1:
-            # count의 개수 = 한 열에 퀸 중복 개수
-                self.fitness -= self.genes.count(column)
-                
-        # \ 대각선 방향 중복 체크
-        test = self.genes.copy()
-        for i in range(SIZE):
-            test[i] += (SIZE - i - 1)
-        for rightdown in range(SIZE * 2 - 1):
-            if test.count(rightdown) > 1:
-                self.fitness -= test.count(rightdown)
-        
-        # / 대각선 방향 중복 체크
-        test = self.genes.copy()
-        for i in range(SIZE):
-            test[i] += i
-        for leftdown in range(SIZE * 2 - 1):
-            if test.count(leftdown) > 1:
-                self.fitness -= test.count(leftdown)
-                
-        return self.fitness
+        have_to_remove = []
+        # 먼저 같은 원내에서 인접한 애들
+        for i in range(n):
+            for j in range(m-1):
+                if board[i][j] != 0 and board[i][j+1] != 0 and board[i][j] == board[i][j+1]:
+                    have_to_remove.append((i,j))
+                    have_to_remove.append((i,j+1))
 
-def print_p(pop): # 출력
-    for i, x in enumerate(pop):
-        print(f"염색체 # {i} = {x.genes} 적합도 = {x.getFitness()}")
-    print()
-    
-def select(pop): # 부모 선택
-    # 적합도에 비례해 선택하면 안좋은 개체를 선택할 확률이 너무 높으므로 좋은 염색체를 남길 확률 더 증가
-    pro = [2 ** i for i in range(SIZE - 1, -1, -1)] 
-    pick = rd.uniform(0, sum(pro))
-    current = 0
-    for c in range(SIZE):
-        current += pro[c]
-        # 룰렛 알고리즘
-        if current > pick:
-            return pop[c]
-            
-def crossover(pop): # 교배
-    father = select(pop)
-    mother = select(pop)
-    half = rd.randrange(1, SIZE) # 염색체 합칠 때 기준점
-    child1 = father.genes[:half] + mother.genes[half:]
-    child2 = mother.genes[:half] + father.genes[half:]
-    return (child1, child2)
-
-def mutate(c): # 돌연변이
-    for i in range(SIZE):
-        if rd.random() < MUT_RATE: # 랜덤으로 하나 바꾸기
-            c.genes[i] = rd.randrange(SIZE)
-
-def getProgress(fitnessMean, fitnessBest, population): # 추이 반영
-    fitnessSum = 0 # 평균을 구하기 위한 합계
-    for c in population:
-        fitnessSum += c.getFitness()
-    fitnessMean.append(fitnessSum / POP_SIZE) # 세대의 평균 적합도 추가
-    fitnessBest.append(population[0].getFitness()) # 세대의 적합도가 가장 높은 염색체의 적합도 추이
-
-def drawChart(x, fitnessMean, fitnessBest, generation): # 추이 그래프 그리기
-    plt.plot(x, fitnessMean, "b", label="mean fitness")
-    plt.plot(x, fitnessBest, "r", label="best fitness")
-    plt.axhline(GOAL, 0, generation, color='lightgray', linestyle='--')
-    plt.axis([0, generation * 1.1, 0, GOAL + 1])
-    plt.xlabel("generation")
-    plt.ylabel("fitness")
-    plt.legend(loc='upper left')
-    plt.show()
-
-    
-def main():
-    population = []
-    fitnessMean = [] # 평균 적합도 추이
-    fitnessBest = [] # 첫번째 염색체의 적합도 추이
-
-    for _ in range(POP_SIZE):
-        population.append(Chromosome())
-    population.sort(key = lambda x: x.getFitness(), reverse=True)
-
-    generation = 0
-    while 1:
-        print("세대 번호 =", generation)
-        print_p(population)
-        generation += 1
-        
-        if population[0].getFitness() == GOAL or generation == MAX_GENE:
-            getProgress(fitnessMean, fitnessBest, population)
-            break
-        
-        new_pop = []
-        
-        for _ in range(POP_SIZE // 2):
-            c1, c2 = crossover(population)
-            new_pop.append(Chromosome(c1))
-            new_pop.append(Chromosome(c2))
-            
-        population = new_pop.copy()
-        for c in population:
-            mutate(c)
-        population.sort(key = lambda x: x.cal_fitness(), reverse=True)
-
-        getProgress(fitnessMean, fitnessBest, population)
-        
-    drawChart(range(1, generation + 1), fitnessMean, fitnessBest, generation)
+            if board[i][0] != 0 and board[i][-1]!=0 and board[i][0] == board[i][-1]:
+                have_to_remove.append((i,0))
+                have_to_remove.append((i,m-1))
 
 
-if __name__ == '__main__':
-    main()
+        # 옆의 원
+        for j in range(m):
+            for i in range(n-1):
+                if board[i][j] != 0 and board[i+1][j] != 0 and board[i][j] == board[i+1][j]:
+                    have_to_remove.append((i,j))
+                    have_to_remove.append((i+1,j))
+
+        # 원판 다시 만들어주기
+        have_to_remove = list(set(have_to_remove))
+
+        for i in range(len(have_to_remove)):
+            x,y = have_to_remove[i]
+            board[x][y] = 0
+
+
+        #없는 경우에는 원판에 적힌 수의 평균을 구하고, 평균보다 큰 수에서 1을 빼고, 작은 수에는 1을 더한다.
+        if len(have_to_remove) == 0:
+            avg_sum = 0
+            zero_cnt = 0
+            for i in range(n):
+                avg_sum += sum(board[i])
+                zero_cnt += board[i].count(0)
+            avg = avg_sum / (n*m-zero_cnt)
+            print(avg_sum)
+            print(n*m-zero_cnt)
+            cnt1 = 0
+            cnt2 = 0
+            for i in range(n):
+                for j in range(m):
+                    if board[i][j] != 0 and  board[i][j] > avg:
+                        avg_sum -= 1
+                        board[i][j] -= 1
+                    elif board[i][j] !=0 and board[i][j] < avg:
+                        board[i][j] += 1
+                        avg_sum += 1
+            print(avg_sum)
+    else:
+        break
+
+ans = 0
+for i in range(n):
+    ans += sum(board[i])
+
+print(ans)
