@@ -33,3 +33,4 @@ bin/
 *.exe
 src/memo.py
 *.iml
+src/memo.cpp
