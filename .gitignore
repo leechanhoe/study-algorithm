@@ -34,3 +34,4 @@ bin/
 src/memo.py
 *.iml
 src/memo.cpp
+*.class
