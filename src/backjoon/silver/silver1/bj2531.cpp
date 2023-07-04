@@ -2,37 +2,40 @@
 #include <vector>
 using namespace std;
 
-int N, d, k, c, ans, now;
-int type[3001];
-vector<int> belt;
+int N, d, k, c, ans, type;
+int cnt[3001];
+vector<int> dish;
 
 int main(){
+    ios::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
+
     cin >> N >> d >> k >> c;
 
     for(int i = 0; i < N; i++){
-        int s;
-        cin >> s;
-        belt.push_back(s);
+        int inpu;
+        cin >> inpu;
+        dish.push_back(inpu);
     }
 
     for(int i = 0; i < k; i++){
-        if(type[belt[i]] == 0)
-            now++;
-        type[belt[i]]++;
-        belt.push_back(belt[i]);
+        dish.push_back(dish[i]);
+        if(cnt[dish[i]]++ == 0)
+            type++;
     }
+    ans = type;
+    if(cnt[c] == 0)
+        ans++;
 
-    ans = max(ans, (belt[c] == 0 ? now + 1 : now));
-    for(int i = 0; i < N - 1; i++){
-        type[belt[i]]--;
-        if(type[belt[i]] == 0)
-            now--;
+    for(int ri = k, le = 0; le < N; ri++, le++){
+        if(--cnt[dish[le]] == 0)
+            type--;       
+        if(cnt[dish[ri]]++ == 0)
+            type++;
 
-        if(type[belt[i+k]] == 0)
-            now++;
-        type[belt[i+k]]++;
-
-        ans = max(ans, (type[c] == 0 ? now + 1 : now));
+        if(cnt[c] == 0)
+            ans = max(ans, type + 1);
+        else
+            ans = max(ans, type);
     }
     cout << ans;
     return 0;
