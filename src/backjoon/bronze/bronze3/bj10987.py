@@ -1,0 +1,1 @@
+print(len([ch for ch in input() if ch in ['a', 'e', 'i', 'o', 'u']]))
