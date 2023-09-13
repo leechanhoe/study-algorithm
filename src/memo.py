@@ -1,5 +1,4 @@
-from collections import defaultdict
-
-a = defaultdict(int)
-a["a"] += 1
-print(a["a"])
+a = 'abc'
+a = list(a)
+a[1] = 'd'
+print(a)
