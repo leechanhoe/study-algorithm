@@ -1,52 +1,46 @@
 #include <iostream>
-#include <queue>
 using namespace std;
 
-int N, G, M;
-pair<int, int> oil[10001];
+int N, M, K;
+int p[100001];
+int s[100001];
+int ans = 987654321;
+
+int cnt, n, r;
+int order[4];
+
+void combination(int now, int pos)
+{
+	if (now == r)
+	{
+		for (int i = 0; i < r; i++)
+		{
+			cout << s[order[i]] << " ";
+
+		}
+		cout << endl;
+ 
+		return;
+	}
+ 
+	for (int idx = pos; idx < n; idx++)
+	{
+		order[now] = idx;
+		combination(now + 1, idx + 1);
+	}
+}
 
 int main() {
-	cin >> N >> G >> M;
-	
-	for(int i = 0; i < M; i++){
-		cin >> oil[i].first;
+	cin >> N >> M >> K;
+	for(int i = 0; i < N; i++){
+		cin >> p[i];
 	}
 	for(int i = 0; i < M; i++){
-		cin >> oil[i].second;
+		cin >> s[i];
 	}
+
+	combination(5, 2);
 	
-	if(N <= G){
-		cout << 0;
-		return 0;
-	}
-	
-	int ans = 0;
-	priority_queue<int> pq;
-	for(int i = 0; i < M; i++){
-		if(oil[i].first <= G)
-			pq.push(oil[i].second);
-		if(oil[i].first > G){
-			while(!pq.empty() && oil[i].first > G){
-				// cout << "1 : "<< pq.top() << '\n';
-				G += pq.top();
-				pq.pop();
-				ans++;
-			}
-			if(oil[i].first > G){
-				ans = -1;
-				break;
-			}
-		}
-	}
-	while(!pq.empty() && N > G){
-		// cout << "2 : "<< pq.top() << '\n';
-		G += pq.top();
-		pq.pop();
-		ans++;
-	}
-	if(N > G)
-		cout << -1;
-	else
-		cout << ans;
+	cout << ans;
 	return 0;
 }
