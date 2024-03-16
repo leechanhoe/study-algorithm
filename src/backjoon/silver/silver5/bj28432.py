@@ -17,6 +17,10 @@ def find_candi(s, e):
             if c not in word and c[-1] == e and c[0] == s:
                 return c
             
+if N == 1:
+    print(candi[0])
+    exit(0)
+
 for i in range(N):
     if word[i] == '?':
         if i == 0:
