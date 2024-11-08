@@ -12,7 +12,7 @@ WITH RECURSIVE Generation AS (
     FROM ECOLI_DATA e
     JOIN Generation g ON e.PARENT_ID = g.ID
 )
--- 3세대 대장균만 출력
+
 SELECT COUNT(ID) AS COUNT, GenerationLevel AS GENERATION
 FROM Generation
 WHERE ID NOT IN (
